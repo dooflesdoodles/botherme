@@ -1,0 +1,30 @@
+{
+  "name": "botherme",
+  "version": "0.0.1",
+  "description": "Chat webapp",
+  "main": "index.js",
+  "scripts": {
+    "bundle": "browserify client/main.js -o client/bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dooflesdoodles/botherme.git"
+  },
+  "keywords": [
+    "chat",
+    "instant",
+    "messager"
+  ],
+  "author": "Niklas Görtz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dooflesdoodles/botherme/issues"
+  },
+  "homepage": "https://github.com/dooflesdoodles/botherme#readme",
+  "dependencies": {
+    "browserify": "^16.2.2",
+    "express": "^4.16.3",
+    "react": "^16.4.1"
+  }
+}
