@@ -22,9 +22,25 @@
     "url": "https://github.com/dooflesdoodles/botherme/issues"
   },
   "homepage": "https://github.com/dooflesdoodles/botherme#readme",
+  "devDependencies": {
+    "@babel/core": "7.0.0-beta.44",
+    "@babel/preset-env": "7.0.0-beta.44",
+    "babel-loader": "8.0.0-beta.2",
+    "clean-webpack-plugin": "^0.1.19",
+    "cross-env": "^5.1.4",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack-dev-server": "^3.1.3"
+  },
   "dependencies": {
-    "browserify": "^16.2.2",
-    "express": "^4.16.3",
-    "react": "^16.4.1"
+    "babel-polyfill": "6.26.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "webpack": "4.5.0",
+    "webpack-cli": "2.0.14"
   }
 }
