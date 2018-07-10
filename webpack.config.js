@@ -1,5 +1,5 @@
 const path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 
 module.exports = {
@@ -7,7 +7,7 @@ module.exports = {
   entry: './client/main.js',
   output: {
     path: path.resolve(__dirname, 'client/static/dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
     rules: [
@@ -18,18 +18,18 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [
-              ['@babel/preset-env']
-            ]
-          }
-        }
-      }
-    ]
+              ['@babel/preset-env'],
+            ],
+          },
+        },
+      },
+    ],
   },
   plugins: [
   ],
   optimization: {
     minimizer: [
-      new UglifyJsPlugin()
-    ]
-  }
+      new UglifyJsPlugin(),
+    ],
+  },
 };
