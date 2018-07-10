@@ -10,14 +10,17 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const apiRouter = require('./routes/api');
-const util = require('./util.js')
+const util = require('./util.js');
+
 
 const app = express();
 
-// send normal html files, not templates
-// app.set('view engine', 'html');
+// development settings, this has to be set before the static router is added
+if (process.env.NODE_ENV === 'dev') {
+  util.loadWebpackDevMiddleware(app);
+}
 
-app.use(logger('dev'));
+app.use(logger(process.env.NODE_ENV === 'dev' ? 'dev' : 'common'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -27,20 +30,21 @@ app.use('/', indexRouter);
 app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use((err, req, res) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
   res.status(err.status || 500);
-  console.log(err)
+  console.log(err);
   res.sendFile(util.staticFile('html/404.html'));
 });
+
 
 module.exports = app;

@@ -3,13 +3,15 @@
  */
 
 const express = require('express');
+
+const util = require('../util.js');
+
+
 const router = express.Router();
 
-const util = require('../util.js')
-
 /* GET home page. */
-router.get(['/', '/index'], function(req, res, next) {
-  res.sendFile(util.staticFile('index.html'));
+router.get(['/', '/index'], (req, res) => {
+  res.sendFile(util.staticFile('html/index.html'));
 });
 
 module.exports = router;

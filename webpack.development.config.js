@@ -1,11 +1,16 @@
 const path = require('path');
+const webpack = require('webpack');
+
+
+const distDir = path.resolve(__dirname, 'client/static/dist')
 
 module.exports = {
   mode: 'development',
   entry: './client/main.js',
   output: {
-    path: path.resolve(__dirname, 'client/static/dist'),
-    filename: 'bundle.js'
+    path: distDir,
+    filename: 'bundle.js',
+    publicPath: '/static/dist'
   },
   module: {
     rules: [
@@ -27,9 +32,8 @@ module.exports = {
   devServer: {
     port: 3000,   //Tell dev-server which port to run
     open: true,   // to open the local server in browser
-    contentBase: path.resolve(__dirname, 'dist') //serve from 'dist' folder
+    contentBase: distDir //serve from 'dist' folder
   },
   plugins: [
-    // new CleanWebpackPlugin(['dist']), //cleans the dist folder
   ]
 };

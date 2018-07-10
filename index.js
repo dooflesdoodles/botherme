@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 
-const debug = require('debug')('botherme:server');
 const http = require('http');
-
 const app = require('./server/server.js');
 
 
@@ -21,11 +19,11 @@ server.on('error', (error) => {
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
-    case 'EACCES':  // privileged port (1-1023) is used without rights (e.g. no sudo)
+    case 'EACCES': // privileged port (1-1023) is used without rights (e.g. no sudo)
       console.error(`Port ${port} requires elevated privileges`);
       process.exit(1);
       break;
-    case 'EADDRINUSE':  // another process already listens on the port
+    case 'EADDRINUSE': // another process already listens on the port
       console.error(`Port ${port} is already in use`);
       process.exit(1);
       break;

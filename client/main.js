@@ -1,5 +1,3 @@
-'use strict';
-
 const React = require('react');
 const ReactDOM = require('react-dom');
 
@@ -13,11 +11,11 @@ class Button extends React.Component {
   }
 
   render() {
-    if (this.state.clicked) {
-      return 'You clicked this button.';
-    } else {
-      return elem('button', { onClick: () => this.setState({ clicked: true }) }, 'Click Me');
+    const { clicked } = this.state;
+    if (clicked) {
+      return 'You clicked this button!';
     }
+    return elem('button', { onClick: () => this.setState({ clicked: true }) }, 'Click Me');
   }
 }
 
