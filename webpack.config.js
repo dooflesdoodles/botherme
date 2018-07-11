@@ -19,7 +19,10 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/react', 'transform-runtime'],
+            presets: [
+              ['@babel/preset-env', { targets: { node: 'current' } }],
+              ['@babel/react'],
+            ],
           },
         },
       },

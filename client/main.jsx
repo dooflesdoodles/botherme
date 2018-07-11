@@ -41,5 +41,5 @@ class Button extends React.Component {
 
 
 // TODO: make sure this still works independet of the position of the script tag in the html
-const domContainer = document.querySelector('#button');
+const domContainer = document.querySelector('#app');
 ReactDOM.render(<Button />, domContainer);

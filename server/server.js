@@ -23,6 +23,10 @@ const app = express();
  */
 
 
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
 // development settings, this has to be set before the static router is added
 if (process.env.NODE_ENV === 'dev') {
   util.loadWebpackDevMiddleware(app);
@@ -53,9 +57,7 @@ app.use((err, req, res) => {
 
   // render the error page
   res.status(err.status || 500);
-  console.log(err);
-  // TODO: actually 404 is checked elsewhere, in this case send a generic error page
-  res.sendFile(util.staticFile('html/404.html'));
+  res.render('error');
 });
 
 
