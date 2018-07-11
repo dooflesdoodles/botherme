@@ -4,7 +4,9 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   mode: 'production',
-  entry: './client/main.js',
+  entry: {
+    app: './client/main.jsx',
+  },
   output: {
     path: path.resolve(__dirname, 'client/static/dist'),
     filename: 'bundle.js',
@@ -12,14 +14,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /(node_modules|server)/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: [
-              ['@babel/preset-env'],
-            ],
+            presets: ['@babel/preset-env', '@babel/react', 'transform-runtime'],
           },
         },
       },

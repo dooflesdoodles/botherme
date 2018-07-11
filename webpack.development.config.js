@@ -5,7 +5,10 @@ const distDir = path.resolve(__dirname, 'client/static/dist');
 
 module.exports = {
   mode: 'development',
-  entry: './client/main.js',
+  entry: {
+    app: './client/main.jsx',
+    // polyfill: 'babel-polyfill',
+  },
   output: {
     path: distDir,
     filename: 'bundle.js',
@@ -14,13 +17,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /(node_modules|server)/,
         use: {
           loader: 'babel-loader',
           options: {
             presets: [
-              ['@babel/preset-env'],
+              ['@babel/preset-env', { targets: { node: 'current' } }],
+              ['@babel/react'],
             ],
           },
         },

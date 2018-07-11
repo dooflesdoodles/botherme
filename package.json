@@ -28,9 +28,7 @@
   },
   "homepage": "https://github.com/dooflesdoodles/botherme#readme",
   "devDependencies": {
-    "@babel/core": "7.0.0-beta.44",
-    "@babel/preset-env": "7.0.0-beta.44",
-    "babel-loader": "8.0.0-beta.2",
+    "babel-eslint": "^8.2.5",
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
     "eslint": "^4.19.1",
@@ -42,6 +40,10 @@
     "nyc": "^12.0.2"
   },
   "dependencies": {
+    "@babel/core": "7.0.0-beta.44",
+    "@babel/preset-env": "7.0.0-beta.44",
+    "@babel/preset-react": "^7.0.0-beta.53",
+    "babel-loader": "8.0.0-beta.2",
     "cookie-parser": "~1.4.3",
     "express": "~4.16.0",
     "express-async-errors": "^3.0.0",
