@@ -8,8 +8,8 @@
     "build": "npm run clean && webpack",
     "prod": "npm run build && NODE_ENV=prod node .",
     "dev": "NODE_ENV=dev node .",
-    "test": "./node_modules/.bin/mocha --reporter spec",
-    "coverage": "./node_modules/.bin/nyc ./node_modules/.bin/mocha",
+    "test": "npm run build && ./node_modules/.bin/mocha --reporter spec",
+    "coverage": "npm run build && ./node_modules/.bin/nyc ./node_modules/.bin/mocha",
     "lint": "./node_modules/.bin/eslint . --ext js,jsx --ignore-path .gitignore"
   },
   "repository": {
