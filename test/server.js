@@ -41,6 +41,7 @@ describe('server', () => {
         .get('/')
         .end((err, res) => {
           expect(res).to.be.html;
+          // TODO: check if it's the correct html file
           done();
         });
     });
@@ -56,4 +57,4 @@ describe('server', () => {
   });
 });
 
-// TODO: clientside tests
+// TODO: clientside tests (another file)
