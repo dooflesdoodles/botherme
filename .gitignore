@@ -1,3 +1,7 @@
+# bundling
+client/static/dist/bundle.js
+
+
 # Logs
 logs
 *.log

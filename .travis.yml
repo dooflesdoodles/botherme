@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+    - node_modules
+script: npm run $JOB
+jobs:
+  include:
+    - stage: check
+      env: JOB=lint
+    - stage: check
+      env: JOB=coverage
