@@ -15,7 +15,7 @@ const server = http.createServer(app);
 
 describe('server', () => {
   // TODO: 100% coverage
-  before((done) => { // Before each test we empty the database
+  before((done) => {
     server.listen(3001, done);
   });
 
