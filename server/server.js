@@ -7,6 +7,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+require('express-async-errors');
 
 const indexRouter = require('./routes/index');
 const apiRouter = require('./routes/api');
@@ -46,6 +47,7 @@ app.use((err, req, res) => {
   // render the error page
   res.status(err.status || 500);
   console.log(err);
+  // TODO: send 404 only when status is really 404, otherwise send a generic error page
   res.sendFile(util.staticFile('html/404.html'));
 });
 
