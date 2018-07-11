@@ -4,6 +4,8 @@ const http = require('http');
 const app = require('./server/server.js');
 
 
+// TODO: adapt this to the changes in server/server.js
+
 // Get port from environment and store in Express.
 const port = process.env.PORT || '3000';
 app.set('port', port);

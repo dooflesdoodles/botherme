@@ -14,6 +14,7 @@ const { expect } = chai;
 const server = http.createServer(app);
 
 describe('server', () => {
+  // TODO: 100% coverage
   before((done) => { // Before each test we empty the database
     server.listen(3001, done);
   });
@@ -54,3 +55,5 @@ describe('server', () => {
     });
   });
 });
+
+// TODO: clientside tests
